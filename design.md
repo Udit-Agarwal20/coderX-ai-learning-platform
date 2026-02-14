@@ -12,10 +12,10 @@ The platform follows a microservices architecture with event-driven communicatio
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Client Layer                            │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│  │   Web App    │  │  Mobile App  │  │   IDE Plugin │           │
+│  ┌──────────────┐  ┌───────────────┐  ┌──────────────┐          │
+│  │   Web App    │  │  Mobile App   │  │   IDE Plugin │          │
 │  │   (React)    │  │ (React Native)│  │   (Future)   │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│  └──────────────┘  └───────────────┘  └──────────────┘          │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -35,11 +35,11 @@ The platform follows a microservices architecture with event-driven communicatio
 │  │             │  │   Service   │  │             │              │
 │  └─────────────┘  └─────────────┘  └─────────────┘              │
 │                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
-│  │  Analytics  │  │ Recommendation│ │  Progress   │             │
-│  │   Service   │  │   Service    │  │  Tracking   │             │
-│  │             │  │              │  │   Service   │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘              │
+│  ┌─────────────┐  ┌───────────────┐  ┌─────────────┐            │
+│  │  Analytics  │  │ Recommendation│  │  Progress   │            │
+│  │   Service   │  │   Service     │  │  Tracking   │            │
+│  │             │  │               │  │   Service   │            │
+│  └─────────────┘  └───────────────┘  └─────────────┘            │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -70,8 +70,8 @@ The platform follows a microservices architecture with event-driven communicatio
 │                                                                 │
 │  ┌─────────────┐  ┌─────────────┐                               │
 │  │     S3      │  │  Vector DB  │                               │
-│  │(Code Files,│  │  (Pinecone/ │                                │
-│  │  Backups)  │  │   Weaviate) │                                │
+│  │ (Code Files,│  │  (Pinecone/ │                               │
+│  │   Backups)  │  │   Weaviate) │                               │
 │  └─────────────┘  └─────────────┘                               │
 └─────────────────────────────────────────────────────────────────┘
                               │
