@@ -11,47 +11,47 @@ The platform follows a microservices architecture with event-driven communicatio
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         Client Layer                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │   Web App    │  │  Mobile App  │  │   IDE Plugin │          │
+│                         Client Layer                            │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │   Web App    │  │  Mobile App  │  │   IDE Plugin │           │
 │  │   (React)    │  │ (React Native)│  │   (Future)   │          │
-│  └──────────────┘  └──────────────┘  └──────────────┘          │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      API Gateway Layer                           │
-│              (AWS API Gateway / Load Balancer)                   │
-│           Authentication, Rate Limiting, Routing                 │
+│                      API Gateway Layer                          │
+│              (AWS API Gateway / Load Balancer)                  │
+│           Authentication, Rate Limiting, Routing                │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Application Services Layer                    │
-│                                                                   │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │   User      │  │   Code      │  │  Learning   │             │
-│  │  Service    │  │  Submission │  │   Service   │             │
-│  │             │  │   Service   │  │             │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
-│                                                                   │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│                    Application Services Layer                   │
+│                                                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+│  │   User      │  │   Code      │  │  Learning   │              │
+│  │  Service    │  │  Submission │  │   Service   │              │
+│  │             │  │   Service   │  │             │              │
+│  └─────────────┘  └─────────────┘  └─────────────┘              │
+│                                                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
 │  │  Analytics  │  │ Recommendation│ │  Progress   │             │
 │  │   Service   │  │   Service    │  │  Tracking   │             │
 │  │             │  │              │  │   Service   │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
+│  └─────────────┘  └─────────────┘  └─────────────┘              │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      AI/ML Processing Layer                      │
-│                                                                   │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │   Pattern   │  │   Concept   │  │   Roadmap   │             │
-│  │  Detection  │  │  Identifier │  │  Generator  │             │
-│  │   Engine    │  │   Engine    │  │   Engine    │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
-│                                                                   │
+│                      AI/ML Processing Layer                     │
+│                                                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+│  │   Pattern   │  │   Concept   │  │   Roadmap   │              │
+│  │  Detection  │  │  Identifier │  │  Generator  │              │
+│  │   Engine    │  │   Engine    │  │   Engine    │              │
+│  └─────────────┘  └─────────────┘  └─────────────┘              │
+│                                                                 │
 │  ┌──────────────────────────────────────────────────┐           │
 │  │        AWS Bedrock Integration Layer             │           │
 │  │  (Foundation Models: Claude, Llama, Titan)       │           │
@@ -60,29 +60,29 @@ The platform follows a microservices architecture with event-driven communicatio
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Data Layer                                │
-│                                                                   │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │  PostgreSQL │  │   MongoDB   │  │    Redis    │             │
-│  │ (User Data, │  │(Code Logs,  │  │   (Cache,   │             │
-│  │  Progress)  │  │  Sessions)  │  │   Sessions) │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
-│                                                                   │
+│                        Data Layer                               │
+│                                                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+│  │  PostgreSQL │  │   MongoDB   │  │    Redis    │              │
+│  │ (User Data, │  │(Code Logs,  │  │   (Cache,   │              │
+│  │  Progress)  │  │  Sessions)  │  │   Sessions) │              │
+│  └─────────────┘  └─────────────┘  └─────────────┘              │
+│                                                                 │
 │  ┌─────────────┐  ┌─────────────┐                               │
 │  │     S3      │  │  Vector DB  │                               │
-│  │(Code Files,│  │  (Pinecone/ │                               │
-│  │  Backups)  │  │   Weaviate) │                               │
+│  │(Code Files,│  │  (Pinecone/ │                                │
+│  │  Backups)  │  │   Weaviate) │                                │
 │  └─────────────┘  └─────────────┘                               │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Infrastructure Layer                          │
-│                                                                   │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │ CloudWatch  │  │   SQS/SNS   │  │   Lambda    │             │
-│  │ (Monitoring)│  │(Event Queue)│  │ (Serverless)│             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
+│                    Infrastructure Layer                         │
+│                                                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+│  │ CloudWatch  │  │   SQS/SNS   │  │   Lambda    │              │
+│  │ (Monitoring)│  │(Event Queue)│  │ (Serverless)│              │
+│  └─────────────┘  └─────────────┘  └─────────────┘              │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
